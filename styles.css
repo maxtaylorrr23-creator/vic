@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text";
+  background: black;
+  overflow: hidden;
+}
+
+/* SCREENS & TRANSITIONS */
+
+.screen {
+  position: absolute;
+  inset: 0;
+  background: black;
+  transform: translateX(100%);
+  transition: transform 0.38s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.screen.active {
+  transform: translateX(0);
+}
+
+.screen.off-right {
+  transform: translateX(100%);
+}
+
+.full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HOME BUTTON HIT AREAS (iPhone 14 Pro Max tuned) */
+
+.btn-my-licence {
+  position: absolute;
+  top: 41%;
+  left: 8%;
+  width: 84%;
+  height: 11%;
+  background: transparent;
+  border: none;
+}
+
+.btn-licence-bottom {
+  position: absolute;
+  bottom: 4.5%;
+  left: 34%;
+  width: 32%;
+  height: 8.5%;
+  background: transparent;
+  border: none;
+}
+
+/* HEADER */
+
+.header {
+  height: 56px;
+  background: white;
+  position: relative;
+}
+
+.back-hitbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 56px;
+  background: transparent;
+  border: none;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+/* LAST REFRESHED */
+
+.refresh-time {
+  text-align: center;
+  background: white;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px;
+  color: #1c1c1e;
+  letter-spacing: -0.01em;
+}
+
+/* LICENCE CONTENT SCROLL */
+
+.scroll-area {
+  height: calc(100% - 96px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-image {
+  width: 100%;
+  display: block;
+}
+
+/* iOS tap feedback */
+button:active {
+  transform: scale(0.97);
+}
